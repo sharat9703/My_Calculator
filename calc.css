@@ -120,6 +120,7 @@ button#equal-to {
 .calculator .theme-toggler::before {
   background-color: rgb(30, 29, 29);
   border-radius: 30px;
+  cursor: pointer;
 }
 
 /* dark theme */
@@ -151,4 +152,5 @@ button#equal-to {
 .calculator.dark .theme-toggler::before {
   background-color: #fff;
   border-radius: 30px;
+  cursor: pointer;
 }

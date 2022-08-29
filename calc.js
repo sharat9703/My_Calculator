@@ -1,6 +1,32 @@
 const display = document.querySelector("#display");
 const buttons = document.querySelectorAll("button");
 
+let BracketSwitch = false;
+    const func = () => {
+        let input = display.innerText.toString();
+        if(input.length>=1){
+            let index= input.charAt(input.length-1);
+            if(!isNaN(parseInt(index)) && BracketSwitch){
+                display.innerText += ')';
+                BracketSwitch = !BracketSwitch;
+            }
+            else if(!isNaN(parseInt(index))&& !BracketSwitch || index ==='.'){
+                display.innerText+='*(';
+                BracketSwitch = !BracketSwitch;
+            }
+            else{
+                display.innerText +='(';
+                if(!BracketSwitch){
+                    BracketSwitch=!BracketSwitch;
+                }
+            }
+        }
+        else{
+            display.innerText += '(';
+            BracketSwitch = !BracketSwitch;
+        }
+    };
+
 buttons.forEach((item) => {
   item.onclick = () => {
     if (item.id == "clear") {
@@ -22,31 +48,7 @@ buttons.forEach((item) => {
       }
     }
     else if(item.id == 'brackets'){
-    let BracketSwitch = false;
-    const func = () => {
-        let input = display.innerText.toString();
-        if(input.length>=1){
-            let index= input.charAt(input.length-1);
-            if(!isNaN(parseInt(index)) && BracketSwitch){
-                display.innerText += ')';
-                BracketSwitch = !BracketSwitch;
-            }
-            else if(!isNaN(parseInt(index))&& !BracketSwitch || index ==='.'){
-                display.innerText+='x(';
-                BracketSwitch = !BracketSwitch;
-            }
-            else{
-                display.innerText +='(';
-                if(!BracketSwitch){
-                    BracketSwitch=!BracketSwitch;
-                }
-            }
-        }
-        else{
-            display.innerText += '(';
-            BracketSwitch = !BracketSwitch;
-        }
-    };
+    func();
     }
     else{
         display.innerText += item.id;
