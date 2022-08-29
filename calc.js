@@ -48,7 +48,10 @@ buttons.forEach((item) => {
       }
     } else if (item.id == "brackets") {
       func();
-    } else {
+    }else if(item.id == 'mod'){
+        display.innerText += '%'; 
+    } 
+    else {
       display.innerText += item.id;
     }
   };

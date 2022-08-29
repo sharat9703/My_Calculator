@@ -86,9 +86,7 @@ button {
 button:hover {
   transform: scale(1.12);
 }
-button#equal-to {
-  height: 135px;
-}
+
 
 /* light theme */
 
@@ -115,7 +113,7 @@ button#equal-to {
 .calculator button.btn-equal-to {
   background-color: rgb(203, 238, 241);
   color: #001;
-  height: 135px;
+  
 }
 .calculator .theme-toggler::before {
   background-color: rgb(30, 29, 29);
@@ -147,7 +145,7 @@ button#equal-to {
 .calculator.dark button.btn-equal-to {
   background-color: rgb(203, 238, 241);
   color: #001;
-  height: 135px;
+  
 }
 .calculator.dark .theme-toggler::before {
   background-color: #fff;
