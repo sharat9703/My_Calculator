@@ -35,7 +35,9 @@ buttons.forEach((item) => {
 
       display.innerText = String.substring(0, String.length - 1);
     } else if (display.innerText != "" && item.id == "equal-to") {
-      display.innerText = eval(display.innerText);
+      let Eval = eval(display.innerText);
+        display.innerText = Eval.toFixed(5);
+      
     } else if (display.innerText == "" && item.id == "equal-to") {
       display.innerText = "pls input something!";
 
