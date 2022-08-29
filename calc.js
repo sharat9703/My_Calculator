@@ -13,8 +13,43 @@ buttons.forEach((item) => {
     } else if (display.innerText == "" && item.id == "equal-to") {
       display.innerText = "pls input something!";
       setTimeout(() => (display.innerText = ""), 2000);
-    } else {
-      display.innerText += item.id;
+    } else if(item.id == 'dot') {
+      if(display.innerText.length==0){
+        display.innerText += '0.';
+      }
+      else{
+        display.innerText += '.';
+      }
+    }
+    else if(item.id == 'brackets'){
+    let BracketSwitch = false;
+    const func = () => {
+        let input = display.innerText.toString();
+        if(input.length>=1){
+            let index= input.charAt(input.length-1);
+            if(!isNaN(parseInt(index)) && BracketSwitch){
+                display.innerText += ')';
+                BracketSwitch = !BracketSwitch;
+            }
+            else if(!isNaN(parseInt(index))&& !BracketSwitch || index ==='.'){
+                display.innerText+='x(';
+                BracketSwitch = !BracketSwitch;
+            }
+            else{
+                display.innerText +='(';
+                if(!BracketSwitch){
+                    BracketSwitch=!BracketSwitch;
+                }
+            }
+        }
+        else{
+            display.innerText += '(';
+            BracketSwitch = !BracketSwitch;
+        }
+    };
+    }
+    else{
+        display.innerText += item.id;
     }
   };
 });
