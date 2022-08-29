@@ -9,8 +9,8 @@ body {
   font-family: sans-serif;
   background-image: linear-gradient(
     to bottom right,
-    rgb(161, 4, 148, 0.7),
-    rgba(222, 78, 78, 0.7)
+    rgba(237, 158, 228, 0.7),
+    rgba(152, 197, 221, 0.7)
   );
 }
 a {
